@@ -3,65 +3,115 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Danielle Matijas — Project Artifacts</title>
-  <meta name="description" content="Portfolio artifacts rendered via GitHub Pages.">
+  <title>Danielle Matijas — ePortfolio</title>
+  <meta name="description" content="Data Science & Machine Learning ePortfolio">
   <link rel="icon" href="data:,">
   <style>
-    :root {
-      --bg: #0b0f19; --fg: #e7ecf3; --muted: #a6b0c3; --card:#11172a; --accent:#8ab4ff;
-      --border:#1d2745;
-    }
-    * { box-sizing: border-box; }
-    body { margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji"; background:var(--bg); color:var(--fg); }
-    header { padding: 48px 20px 24px; max-width: 960px; margin: 0 auto; }
-    header h1 { font-size: clamp(28px, 4vw, 40px); margin: 0 0 8px; }
-    header p { margin: 0; color: var(--muted); }
-    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; padding: 24px 20px 48px; max-width: 960px; margin:0 auto; }
-    .card { display:block; text-decoration:none; background:linear-gradient(180deg, var(--card), #0d1426); padding:20px; border-radius:16px; border:1px solid var(--border); transition: transform .15s ease, border-color .2s ease; position:relative; }
-    .card:hover { transform: translateY(-2px); border-color: var(--accent); }
-    .card h3 { margin:0 0 8px; color:var(--fg); font-size: 18px; line-height:1.3; }
-    .card p { margin:0 0 28px; color:var(--muted); font-size:14px; }
-    .pill { position:absolute; right:12px; bottom:12px; border:1px solid var(--border); padding:4px 8px; border-radius:999px; font-size:12px; color:var(--muted); }
-    footer { max-width:960px; margin:0 auto 48px; color:var(--muted); padding:0 20px; font-size:13px; }
-    code { background:#0e162a; padding:2px 6px; border-radius:6px; border:1px solid var(--border); color:#cde1ff; }
-    .tips { margin-top: 8px; }
-    .tips li { margin: 6px 0; }
-  </style>
+:root{--bg:#fff;--fg:#1f2937;--muted:#6b7280;--chip:#e5e7eb;--chipfg:#374151;--line:#e5eff9;--accent:#0a66c2;--hl:#f8fafc;}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);
+font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+.wrap{max-width:1000px;margin:0 auto;padding:28px 18px 64px}
+header.profile{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:20px;display:grid;grid-template-columns:120px 1fr 300px;gap:20px;align-items:start}
+header.profile h1{margin:0;font-size:28px;font-weight:700}
+header.profile .photo img{width:120px;height:120px;border-radius:50%;object-fit:cover;border:2px solid #e5e7eb}
+header.profile .logos{display:flex;gap:12px;align-items:center;margin-top:6px}
+header.profile .logos img{height:36px;auto;max-width:120px}
+.course-title{color:var(--accent);font-weight:600;margin-top:6px;font-size:16px;text-decoration:none}
+.dates{color:var(--muted);font-size:14px;margin-top:2px}
+.links{margin-top:10px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.links a{color:var(--accent);text-decoration:none;font-weight:500}
+.links a:hover{text-decoration:underline}
+.cert-img img{width:100%;height:auto;border:1px solid #e5e7eb;border-radius:8px}
+.section{padding-top:20px}
+.card{display:block;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:18px;margin-bottom:16px;transition:box-shadow .2s ease,transform .1s ease}
+.card:hover{box-shadow:0 10px 28px rgba(16,24,40,.08);transform:translateY(-2px)}
+.card h3{margin:0 0 6px;font-size:20px;line-height:1.3;color:var(--fg)}
+.meta{color:var(--muted);font-weight:600;margin-bottom:6px}
+.desc{color:var(--muted);margin:0 12px 12px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.chip{background:var(--chip);color:var(--chipfg);border-radius:999px;padding:6px 10px;font-size:12px}
+.actions{margin-top:12px}
+.btn{appearance:none;border:1px solid var(--accent);color:#fff;background:var(--accent);padding:8px 12px;border-radius:8px;font-weight:600;text-decoration:none;font-size:14px}
+/* Journey row */
+.highlights{display:grid;grid-template-columns:140px 1fr;gap:12px;align-items:center;background:var(--hl);border:1px dashed #e5e7eb;border-radius:12px;padding:10px 12px;margin-top:10px}
+.highlights img{width:140px;height:100px;object-fit:cover;border:1px solid #e5e7eb;border-radius:8px;background:#fafafa}
+.highlights h4{margin:0 0 6px;font-size:14px;color:#334155}
+.highlights ol{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+footer{margin-top:28px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Project Artifacts</h1>
-    <p>Rendered via GitHub Pages. Each card opens the HTML in a new tab.</p>
-  </header>
-<main class="grid">
-  <a class="card" href="./recommendation-system-for-amazon-users.html" target="_blank" rel="noopener">
-    <h3>Recommendation System for Amazon Users</h3>
-    <p>Open the full HTML artifact in a new tab.</p>
-    <span class="pill">HTML</span>
-  </a>
+  <div class="wrap">
+    <header class="profile">
+      <div class="photo"><img src="./assets/profile.jpg" alt="Profile photo"></div>
+      <div>
+        <h1>Danielle Matijas</h1>
+        <div class="logos">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg" alt="MIT logo">
+          <img src="https://idss.mit.edu/wp-content/themes/idss/images/idss-logo-color.png" alt="MIT IDSS logo">
+        </div>
+        <a class="course-title" href="./assets/certificate-mit-idss.png" target="_blank" rel="noopener">
+          Data Science and Machine Learning: Making Data‑Driven Decisions by MIT IDSS
+        </a>
+        <div class="dates">May 2025 – August 2025</div>
+        <div class="links">
+          <a href="./assets/certificate-mit-idss.png" target="_blank" rel="noopener">View Certificate</a> · CERTIFICATE ID: DJIVEFLZ
+          <a href="https://www.linkedin.com/in/danielle-matijas-0b977799" target="_blank" rel="noopener">LinkedIn Profile</a>
+        </div>
+      </div>
+      <div class="cert-img"><a href="./assets/certificate-mit-idss.png" target="_blank"><img src="./assets/certificate-mit-idss.png" alt="MIT IDSS Certificate"></a></div>
+    </header>
 
-  <a class="card" href="./prediction-system-for-potential-customers.html" target="_blank" rel="noopener">
-    <h3>Prediction System for Potential Customers</h3>
-    <p>Open the full HTML artifact in a new tab.</p>
-    <span class="pill">HTML</span>
-  </a>
+    <div class="section">
+      
+      <a class="card" href="./recommendation-system-for-amazon-users.html" target="_blank" rel="noopener">
+        <div class="meta">AUG 2025 · Course: Recommendation Systems</div>
+        <h3>Building a recommendation system to recommend the best Amazon products to users</h3>
+        <p class="desc">Recommends top Amazon products using ranking, similarity, and matrix factorization methods on user–item ratings.</p>
+        <div class="chips"><span class="chip">Rank-based Recommendation Systems</span><span class="chip">Similarity-based Recommendation Systems</span><span class="chip">Matrix Factorization</span></div>
+        <div class="highlights">
+          <img src="./assets/recommendation-system-for-amazon-users-teaser.png" alt="Preview">
+          <div>
+            <h4>Model Journey & Outcome</h4>
+            <ol><li>Baseline: Top‑N popularity to set a control for uplift.</li><li>Phase 1: Item‑based similarity (cosine on user–item matrix) to personalize by co‑occurrence.</li><li>Phase 2: User‑based k‑NN to compare taste profiles and expand coverage.</li><li>Phase 3: Matrix factorization (SVD) to capture latent tastes; tuned factors & regularization.</li><li><strong>Final Recommendation:</strong> SVD top‑N with fallback to item‑sim for cold items; served as a ranked list with product links.</li></ol>
+          </div>
+        </div>
+        <div class="actions"><span class="btn">Open Artifact</span></div>
+      </a>
+    
+      <a class="card" href="./prediction-system-for-potential-customers.html" target="_blank" rel="noopener">
+        <div class="meta">AUG 2025 · Course: Supervised Machine Learning</div>
+        <h3>Prediction system for potential customers</h3>
+        <p class="desc">Classifies leads most likely to convert using logistic regression and tree-based models; includes feature engineering and evaluation.</p>
+        <div class="chips"><span class="chip">Logistic Regression</span><span class="chip">Random Forests</span><span class="chip">Model Evaluation</span><span class="chip">Feature Engineering</span></div>
+        <div class="highlights">
+          <img src="./assets/prediction-system-for-potential-customers-teaser.png" alt="Preview">
+          <div>
+            <h4>Model Journey & Outcome</h4>
+            <ol><li>Baseline: Majority‑class benchmark + simple rules from EDA.</li><li>Phase 1: Logistic regression with standardized numeric features + one‑hot categoricals.</li><li>Phase 2: Random Forest to capture non‑linear splits; tuned depth/trees.</li><li>Thresholding: Optimized decision threshold for business precision‑recall trade‑off.</li><li><strong>Final Recommendation:</strong> Random Forest with calibrated probabilities and a top‑decile outreach list.</li></ol>
+          </div>
+        </div>
+        <div class="actions"><span class="btn">Open Artifact</span></div>
+      </a>
+    
+      <a class="card" href="./customer-personality-segmentation.html" target="_blank" rel="noopener">
+        <div class="meta">AUG 2025 · Course: Unsupervised Learning</div>
+        <h3>Customer personality segmentation</h3>
+        <p class="desc">Segments customers with clustering to identify actionable personas and tailor marketing strategies.</p>
+        <div class="chips"><span class="chip">K-Means Clustering</span><span class="chip">EDA</span><span class="chip">Dimensionality Reduction</span></div>
+        <div class="highlights">
+          <img src="./assets/customer-personality-segmentation-teaser.png" alt="Preview">
+          <div>
+            <h4>Model Journey & Outcome</h4>
+            <ol><li>Pre‑processing: Scaling, outlier caps, and PCA preview for structure.</li><li>K selection: Elbow + silhouette to narrow candidates.</li><li>Clustering: K‑Means with repeat inits; interpreted centroids into personas.</li><li><strong>Final Recommendation:</strong> 4‑segment persona map (e.g., Value Seekers, Loyal Upsellers, High‑Value Minimalists, At‑Risk Bargain Hunters) with tailored actions.</li></ol>
+          </div>
+        </div>
+        <div class="actions"><span class="btn">Open Artifact</span></div>
+      </a>
+    
+    </div>
 
-  <a class="card" href="./customer-personality-segmentation.html" target="_blank" rel="noopener">
-    <h3>Customer Personality Segmentation</h3>
-    <p>Open the full HTML artifact in a new tab.</p>
-    <span class="pill">HTML</span>
-  </a>
-</main>
-
-  <footer>
-    <details>
-      <summary>How this is set up</summary>
-      <ul class="tips">
-        <li>Place your exported HTML files in the repository root. Ensure the main file is named <code>index.html</code> (this page).</li>
-        <li>Avoid spaces in filenames; use <code>kebab-case</code> (we’ve normalized them here).</li>
-        <li>All links are <code>target="_blank"</code> to keep your portfolio open.</li>
-      </ul>
-    </details>
-  </footer>
+    <footer>© 2025 Danielle Matijas • GitHub Pages</footer>
+  </div>
 </body>
 </html>
