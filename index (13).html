@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Danielle Matijas — ePortfolio</title>
+  <meta name="description" content="Data Science & Machine Learning ePortfolio">
+  <link rel="icon" href="data:,">
+  <style>
+:root{--bg:#fff;--fg:#1f2937;--muted:#6b7280;--chip:#e5e7eb;--chipfg:#374151;--line:#e5eff9;--accent:#0a66c2;--hl:#f8fafc;}
+*{box-sizing:border-box}html,body{margin:0;padding:0;background:var(--bg);color:var(--fg);
+font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+.wrap{max-width:1000px;margin:0 auto;padding:28px 18px 64px}
+/* Header: name + logos left, certificate right */
+header.profile{border-bottom:1px solid var(--line);padding-bottom:20px;margin-bottom:20px;
+  display:grid;grid-template-columns:1fr 280px;gap:24px;align-items:start}
+.left h1{margin:0;font-size:28px;font-weight:700}
+.logos{display:flex;gap:14px;align-items:center;margin-top:8px}
+.logos img{height:42px;width:auto}
+.course-title{color:var(--accent);font-weight:600;margin-top:8px;font-size:16px;text-decoration:none}
+.dates{color:var(--muted);font-size:14px;margin-top:2px}
+.links{margin-top:10px;display:flex;flex-direction:column;gap:6px;font-size:14px}
+.links a{color:var(--accent);text-decoration:none;font-weight:500}
+.links a:hover{text-decoration:underline}
+.sidebar{display:flex;flex-direction:column;gap:14px}
+.sidebar .cert img{width:100%;height:auto;border:1px solid #e5e7eb;border-radius:8px}
+/* Cards */
+.section{padding-top:20px}
+.card{display:block;text-decoration:none;background:#fff;border:1px solid #e5e7eb;border-radius:16px;padding:18px;margin-bottom:16px;transition:box-shadow .2s ease,transform .1s ease}
+.card:hover{box-shadow:0 10px 28px rgba(16,24,40,.08);transform:translateY(-2px)}
+.card h3{margin:0 0 6px;font-size:20px;line-height:1.3;color:var(--fg)}
+.meta{color:var(--muted);font-weight:600;margin-bottom:6px}
+.desc{color:var(--muted);margin:0 12px 12px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.chip{background:var(--chip);color:var(--chipfg);border-radius:999px;padding:6px 10px;font-size:12px}
+.actions{margin-top:12px}
+.btn{appearance:none;border:1px solid var(--accent);color:#fff;background:var(--accent);padding:8px 12px;border-radius:8px;font-weight:600;text-decoration:none;font-size:14px}
+/* Journey row */
+.highlights{display:grid;grid-template-columns:140px 1fr;gap:12px;align-items:center;background:var(--hl);border:1px dashed #e5e7eb;border-radius:12px;padding:10px 12px;margin-top:10px}
+.highlights img{width:140px;height:100px;object-fit:cover;border:1px solid #e5e7eb;border-radius:8px;background:#fafafa}
+.highlights h4{margin:0 0 6px;font-size:14px;color:#334155}
+.highlights ol{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+footer{margin-top:28px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="profile">
+      <div class="left">
+        <h1>Danielle Matijas</h1>
+        <div class="logos">
+          <img src="./assets/mit-logo.svg" alt="MIT logo">
+          <img src="./assets/idss-logo.png" alt="MIT IDSS">
+        </div>
+        <a class="course-title" href="./assets/certificate-mit-idss.png" target="_blank" rel="noopener">
+          Data Science and Machine Learning: Making Data‑Driven Decisions
+        </a>
+        <div class="dates">May 2025 – August 2025</div>
+        <div class="links">
+          <a href="./assets/certificate-mit-idss.png" target="_blank" rel="noopener">View Certificate</a>
+          <a href="https://www.linkedin.com/in/danielle-matijas-0b977799" target="_blank" rel="noopener">LinkedIn Profile</a>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="cert"><a href="./assets/certificate-mit-idss.png" target="_blank"><img src="./assets/certificate-mit-idss.png" alt="Certificate"></a></div>
+      </div>
+    </header>
+
+    <div class="section">
+      
+      <a class="card" href="./recommendation-system-for-amazon-users.html" target="_blank" rel="noopener">
+        <div class="meta">AUG 2025 · Course: Recommendation Systems</div>
+        <h3>Building a recommendation system to recommend the best Amazon products to users</h3>
+        <p class="desc">Recommends top Amazon products using ranking, similarity, and matrix factorization methods on user–item ratings.</p>
+        <div class="chips"><span class="chip">Rank-based Recommendation Systems</span><span class="chip">Similarity-based Recommendation Systems</span><span class="chip">Matrix Factorization</span></div>
+        <div class="highlights">
+          <img src="./assets/recommendation-system-for-amazon-users-teaser.png" alt="Preview">
+          <div>
+            <h4>Model Journey & Outcome</h4>
+            <ol><li>Baseline: Top‑N popularity to set a control for uplift.</li><li>Phase 1: Item‑based similarity (cosine on user–item matrix) to personalize by co‑occurrence.</li><li>Phase 2: User‑based k‑NN to compare taste profiles and expand coverage.</li><li>Phase 3: Matrix factorization (SVD) to capture latent tastes; tuned factors & regularization.</li><li><strong>Final recommendation:</strong> SVD top‑N with fallback to item‑sim for cold items; served as a ranked list with product links.</li></ol>
+          </div>
+        </div>
+        <div class="actions"><span class="btn">View Project Notebook</span></div>
+      </a>
+    
+      <a class="card" href="./prediction-system-for-potential-customers.html" target="_blank" rel="noopener">
+        <div class="meta">AUG 2025 · Course: Supervised Machine Learning</div>
+        <h3>Prediction system for potential customers</h3>
+        <p class="desc">Classifies leads most likely to convert using logistic regression and tree-based models; includes feature engineering and evaluation.</p>
+        <div class="chips"><span class="chip">Logistic Regression</span><span class="chip">Random Forests</span><span class="chip">Model Evaluation</span><span class="chip">Feature Engineering</span></div>
+        <div class="highlights">
+          <img src="./assets/prediction-system-for-potential-customers-teaser.png" alt="Preview">
+          <div>
+            <h4>Model Journey & Outcome</h4>
+            <ol><li>Baseline: Majority‑class & simple EDA rules to quantify uplift.</li><li>Phase 1: Pruned Decision Tree — reduced overfitting and improved interpretability.</li><li>Phase 2: Tuned Random Forest — grid search over `n_estimators`, depth, and split/leaf sizes.</li><li><strong>Final recommendation:</strong> Deploy the <strong>Random Forest</strong> as the primary conversion scorer (e.g., `n_estimators=200`, `min_samples_split=10`, `min_samples_leaf=4`). Score leads daily, send the <em>top decile</em> to Sales, set a threshold to meet precision/recall targets, keep a nurture track for lower‑propensity segments, and emphasize <em>referrals</em>, <em>profile completion</em>, and <em>direct contact</em> signals; retrain and monitor Precision/Recall + F1 on fresh data.</li></ol>
+          </div>
+        </div>
+        <div class="actions"><span class="btn">View Project Notebook</span></div>
+      </a>
+    
+      <a class="card" href="./customer-personality-segmentation.html" target="_blank" rel="noopener">
+        <div class="meta">AUG 2025 · Course: Unsupervised Learning</div>
+        <h3>Customer personality segmentation</h3>
+        <p class="desc">Segments customers with clustering to identify actionable personas and tailor marketing strategies.</p>
+        <div class="chips"><span class="chip">K-Means Clustering</span><span class="chip">EDA</span><span class="chip">Dimensionality Reduction</span></div>
+        <div class="highlights">
+          <img src="./assets/customer-personality-segmentation-teaser.png" alt="Preview">
+          <div>
+            <h4>Model Journey & Outcome</h4>
+            <ol><li>Prep: Cleaned & scaled features; winsorized outliers; explored structure with PCA scatter plots.</li><li>Modeling: Compared k values via Elbow and Silhouette; selected <strong>k=4</strong> for stable, interpretable clusters.</li><li>Interpretation: Profiled centroids on spend, recency, web activity to define clear personas.</li><li><strong>Final recommendation:</strong> Adopt a 4‑segment persona map (e.g., <em>Value Seekers</em>, <em>Loyal Upsellers</em>, <em>High‑Value Minimalists</em>, <em>At‑Risk Bargain Hunters</em>). Personalize offers and channels by persona; track movement between segments monthly and refresh clusters quarterly.</li></ol>
+          </div>
+        </div>
+        <div class="actions"><span class="btn">View Project Notebook</span></div>
+      </a>
+    
+    </div>
+
+    <footer>© 2025 Danielle Matijas • GitHub Pages</footer>
+  </div>
+</body>
+</html>
