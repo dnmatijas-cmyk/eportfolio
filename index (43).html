@@ -1,0 +1,348 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Danielle Matijas — ePortfolio</title>
+  <meta name="description" content="Data Science & Machine Learning ePortfolio">
+  <link rel="icon" href="data:,">
+  <style>
+:root{
+  --bg:#0b1020; --panel:#0f1530; --ink:#e8ecf7; --muted:#a0acc4;
+  --accent:#6aa6ff; --accent2:#c084fc; --chip:#1b2348; --chipfg:#c9d4f2; --line:#1b2550;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
+  font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
+a{text-decoration:none;color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:28px 18px 100px;position:relative}
+.bg-grid{position:fixed;inset:0;background:url('./assets/bg-grid.svg');opacity:.3;pointer-events:none}
+/* Header / Hero */
+header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:relative}
+.hero h1{margin:0;font-size:38px;line-height:1.1}
+.gradient{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.logos{display:flex;gap:16px;align-items:center;margin:14px 0;background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:8px 12px;box-shadow:0 2px 8px rgba(0,0,0,.06)}
+.logos img{height:42px;width:auto}
+.course-title{display:inline-block;color:var(--ink);font-weight:700;margin-top:6px;font-size:16px}
+.dates{color:var(--muted);font-size:14px;margin-top:4px}
+.links{margin-top:12px;display:flex;gap:14px;flex-wrap:wrap}
+.links a{color:var(--accent)}
+.hero .right{position:absolute;top:40px;right:18px;width:260px}
+.hero .right img{width:100%;height:auto;border-radius: 8px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.scrollcue{display:flex;align-items:center;gap:8px;color:var(--muted);font-size:14px;margin-top:22px;opacity:.9}
+/* Sections */
+.section{padding-top:28px}
+.section h2{font-size:12px;letter-spacing: .2em;color:var(--muted);margin:18px 0 8px;text-transform:uppercase}
+/* Featured project */
+.featured{display:grid;grid-template-columns:1.6fr 1fr;gap:16px;background:linear-gradient(180deg,#0f1530,rgba(15,21,48,.6));
+  border:1px solid var(--line);border-radius:16px;padding:16px;overflow:hidden}
+.featured .img{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.02)}
+.featured .img img{width:100%;height:100%;object-fit:cover;display:block}
+.featured .meta{display:flex;flex-direction:column;gap:6px}
+.featured .title{font-size:22px;font-weight:700}
+.featured .desc{color:var(--muted)}
+.featured .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.chip{background:var(--chip);color:var(--chipfg);border-radius:999px;padding:6px 10px;font-size:12px}
+.btn{display:inline-block;margin-top:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:#0b1020;border:none;border-radius: 8px;padding:10px 14px;font-weight:800}
+/* Two-up grid for remaining projects */
+.grid-two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:14px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;transition:transform .2s ease, box-shadow .2s ease;display:flex;flex-direction:column;height:100%}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.25)}
+.card .thumb{height:200px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.02);margin-bottom:10px}
+.card .thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(1.05)}
+.card .meta{font-size:12px;color:var(--muted);margin-bottom:6px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{color:var(--muted);margin:0 0 10px}
+.card .chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+.card .journey{background:rgba(255,255,255,.02);border:1px dashed var(--line);border-radius:12px;padding:10px;margin-top:10px;margin-bottom:8px}
+.card .journey h4{margin:0 0 6px;font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.card .journey ol{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+.card .btn{margin-top:auto;align-self:flex-start}
+/* Bottom spinning section */
+.bottom-hero{position:relative;margin-top:60px;padding:80px 0;border-top:1px solid var(--line)}
+.bottom-hero .spin-wrap{position:absolute;left:50%;transform:translateX(-50%);top:-60px}
+.spin{animation:spin 16s linear infinite;filter:drop-shadow(0 10px 20px rgba(0,0,0,.4))}
+@keyframes spin{to{transform:rotate(360deg)}}
+.wordline{font-size:clamp(10px,1.8vw,20px);line-height:1;text-align:center;letter-spacing:.01em;color:#c9d4f2;opacity:.9;font-weight:700;white-space:nowrap;overflow:hidden;}
+.wordline .sep{color:#7c8bb9;margin:0 .4em}
+.footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;text-align:center}
+@media (max-width: 900px){
+  .hero .right{position:static;width:100%;margin-top:14px}
+  .featured{grid-template-columns:1fr}
+  .grid-two{grid-template-columns:1fr}
+  .bottom-hero .spin-wrap{top:-40px}
+}
+.back .overlay .tw{font-weight:900;font-size:18px;letter-spacing:.12em;color:#e8ecf7;
+  padding:12px 18px;border:1px dashed var(--line);border-radius:8px;background:rgba(255,255,255,.04);
+  white-space:nowrap;overflow:hidden;width:var(--tw-ch, 28ch)}
+.back .overlay .tw.typing{animation:typing 1.4s steps(var(--tw-steps,28)) both}
+@keyframes typing{from{width:0}
+
+/* === Featured Card CSS (restored) === */
+:root{--card-bg: linear-gradient(180deg,#121a3a,#0e1533); --card-ink:#e8ecf7; --card-line:#243262;}
+.card-hero{margin-top:26px; perspective:1200px}
+.flip{position:relative;width:100%}
+.rotor{position:relative;width:100%;height:460px;transform-style:preserve-3d;
+  transition: transform 700ms cubic-bezier(.2,.7,.2,1); will-change: transform;}
+.spin-once .rotor{animation:slowspin 4s linear 1}
+@keyframes slowspin{to{transform:rotateY(360deg)}}
+.flipped .rotor{transform:rotateY(180deg)}
+.side{position:absolute;inset:0;border-radius:12px;overflow:hidden;border:1px solid var(--card-line);
+  background:var(--card-bg);color:var(--card-ink);backface-visibility:hidden;display:grid;grid-template-columns:1fr 1.2fr;
+  transform:translateZ(0);box-shadow:0 14px 36px rgba(0,0,0,.35)}
+.side .meta-grid{display:grid;grid-template-rows:auto 1fr auto;gap:12px;padding:18px 18px 16px}
+.side .labels{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-size:12px;letter-spacing:.18em;color:#8aa0d9;display:flex;justify-content:space-between;border-bottom:1px dashed var(--card-line);padding-bottom:8px}
+.side .headline{font-size:clamp(28px,4.6vw,44px);line-height:1.08;margin:8px 0 6px;letter-spacing:-0.01em}
+.side .sub{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  font-size:12px;letter-spacing:.12em;color:#9bb1ea;display:flex;gap:10px;align-items:center}
+.side .desc{font-size:14px;line-height:1.55;color:#c9d4f2;max-width:52ch}
+.side .thumb-wrap{position:relative;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.02)}
+.side .thumb{width:78%;max-height:86%;object-fit:contain;border:1px solid var(--card-line);border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,.25)}
+/* Decorations (optional; safe if assets missing) */
+.perf-left,.perf-right{position:absolute;top:10px;bottom:10px;width:10px;background:url('./assets/perforation.svg') repeat-y center;opacity:.35;filter:hue-rotate(200deg)}
+.perf-left{left:10px} .perf-right{right:10px}
+.corner{position:absolute;width:10px;height:10px;background:url('./assets/corner.svg') no-repeat center;opacity:.45;filter:hue-rotate(200deg)}
+.corner.tl{top:8px;left:28px} .corner.tr{top:8px;right:28px}
+.corner.bl{bottom:8px;left:28px} .corner.br{bottom:8px;right:28px}
+/* Back (only text) */
+.side.back{transform:rotateY(180deg);grid-template-columns:1fr;place-items:center;background:linear-gradient(180deg,#0f1530,#0b1020)}
+.back .overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.back .overlay .tw{font-weight:900;font-size:18px;letter-spacing:.12em;color:#e8ecf7;
+  padding:12px 18px;border:1px dashed var(--line);border-radius:8px;background:rgba(255,255,255,.04);white-space:nowrap}
+/* Responsive tweaks */
+@media (max-width: 900px){
+  .rotor{height:420px}
+  .side{grid-template-columns:1fr}
+}
+/* Bottom wordline size lock */
+.wordline{font-size:clamp(10px,1.8vw,20px);line-height:1;text-align:center;letter-spacing:.01em;color:#c9d4f2;opacity:.9;font-weight:700;white-space:nowrap;overflow:hidden;}
+
+</style>
+
+
+<style id="featured-override">
+/* Self-contained 3D card with separated spin (wrapper) and flip (rotor) */
+:root{--f-bg1:#121a3a; --f-bg2:#0e1533; --f-line:#243262; --f-ink:#e8ecf7; --f-muted:#9bb1ea;}
+.card3d-wrap{perspective:1200px}
+.card3d{position:relative;width:100%;transform:translateZ(0);will-change:transform}
+.card3d.spin-once{animation:cardspin 4s linear 1}
+@keyframes cardspin{to{transform:rotateY(360deg)}}
+.rotor{position:relative;width:100%;height:460px;transform-style:preserve-3d;
+  transition:transform 600ms cubic-bezier(.2,.7,.2,1);will-change:transform}
+.card3d.flipped .rotor{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;border:1px solid var(--f-line);border-radius:12px;overflow:hidden;
+  background:linear-gradient(180deg,var(--f-bg1),var(--f-bg2));color:var(--f-ink);
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;display:grid;grid-template-columns:1fr 1.2fr;
+  box-shadow:0 14px 36px rgba(0,0,0,.35);transform:translateZ(0)}
+.face-media{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.03)}
+.face-media img{width:78%;max-height:86%;object-fit:contain;border:1px solid var(--f-line);border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,.25)}
+.face-meta{display:grid;grid-template-rows:auto 1fr auto;gap:12px;padding:18px 18px 16px}
+.face-labels{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
+  font-size:12px;letter-spacing:.18em;color:var(--f-muted);display:flex;justify-content:space-between;border-bottom:1px dashed var(--f-line);padding-bottom:8px}
+.face-title{margin:8px 0 6px;font-size:clamp(28px,4.6vw,44px);line-height:1.08;letter-spacing:-.01em;font-weight:800}
+.face-sub{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
+  font-size:12px;letter-spacing:.12em;color:var(--f-muted)}
+.face-course{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
+  font-size:12px;letter-spacing:.08em;color:var(--f-muted);margin-top:2px}
+.face-desc{font-size:14px;line-height:1.55;color:#c9d4f2;max-width:52ch;margin:0}
+.face-hint{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
+  font-size:11px;color:var(--f-muted);text-align:right}
+.face-back{transform:rotateY(180deg);grid-template-columns:1fr;place-items:center}
+.face-back-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
+.typewriter{font-weight:900;font-size:18px;letter-spacing:.12em;color:#e8ecf7;padding:12px 18px;border:1px dashed var(--f-line);border-radius:8px;background:rgba(255,255,255,.04);white-space:nowrap}
+@media (max-width:900px){.face{grid-template-columns:1fr}.rotor{height:420px}}
+
+/* Keep bottom tagline small/single-line */
+.wordline{font-size:clamp(10px,1.8vw,20px);line-height:1;text-align:center;letter-spacing:.01em;color:#c9d4f2;opacity:.9;font-weight:700;white-space:nowrap;overflow:hidden;}
+</style>
+
+
+</head>
+<body>
+  <div class="bg-grid"></div>
+  <div class="wrap">
+    
+<header class="hero">
+  <h1><span class="gradient">Danielle Matijas</span><br>Data Science & Machine Learning ePortfolio</h1>
+  <div class="logos"><img src="./assets/mit-logo.svg" alt="MIT logo"><img src="./assets/idss-logo.png" alt="MIT IDSS"></div>
+  <a class="course-title" href="./assets/certificate-mit-idss.png" target="_blank" rel="noopener">
+    Data Science and Machine Learning: Making Data‑Driven Decisions
+  </a>
+  <div class="dates">May 2025 – August 2025</div>
+  <div class="links">
+    <a href="./Matijas, Danielle Resume 2025.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+<a href="./assets/certificate-mit-idss.png" target="_blank" rel="noopener">Download Certificate</a>
+    <a href="https://www.linkedin.com/in/danielle-matijas-0b977799" target="_blank" rel="noopener">LinkedIn</a>
+  </div>
+<div class="scrollcue">Scroll to explore</div>
+</header>
+
+    
+
+
+
+
+
+
+<section class="section card-hero" id="featured">
+  <h2>Featured Project</h2>
+  <div class="card3d-wrap">
+    <div class="card3d" id="card3d" aria-label="Featured project card">
+      <div class="rotor" id="rotor">
+        <div class="face face-front">
+          <div class="face-media"><img src="./assets/amazon-featured.png" alt="Amazon recommender preview"></div>
+          <div class="face-meta">
+            <div class="face-labels"><span>01 · RECOMMENDATION SYSTEMS</span><span>ABOUT</span></div>
+            <h3 class="face-title">Amazon products, ranked.</h3>
+            <div class="face-course">Course: Recommendation Systems</div>
+            <p class="face-desc">This project involves recommending the best Amazon products available to users based on past rating data using recommendation systems techniques.</p>
+            <div class="face-hint">Hover to preview · tap on mobile</div>
+          </div>
+        </div>
+        <div class="face face-back">
+          <div class="face-back-overlay">
+            <a class="typewriter" id="typewriter" href="./Reccomendation System for Amazon Users.html" target="_blank" rel="noopener">VIEW FULL PROJECT NOTEBOOK</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="flip-hint">Preview flips on hover; on touch, tap to open/close</div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<script id="featured-script">
+(function(){
+  const card = document.getElementById('card3d');
+  const rotor = document.getElementById('rotor');
+  const tw = document.getElementById('typewriter');
+  const phrase = 'VIEW FULL PROJECT NOTEBOOK';
+  const notebookHref = './Reccomendation System for Amazon Users.html';
+  let rafId = null;
+
+  // Spin once when visible and on load (keep from source)
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        card.classList.remove('spin-once'); void card.offsetWidth;
+        card.classList.add('spin-once');
+      }
+    });
+  }, { threshold: 0.35 });
+  io.observe(card);
+  card.addEventListener('animationend', () => card.classList.remove('spin-once'));
+  document.addEventListener('DOMContentLoaded', () => { card.classList.add('spin-once'); });
+
+  function cancelType(){ if(rafId){ cancelAnimationFrame(rafId); rafId = null; } }
+  function runType(){
+    cancelType();
+    if (!tw) return;
+    tw.textContent = '';
+    let i = 0;
+    const step = () => {
+      i += 0.04;
+      const shown = Math.min(phrase.length, Math.floor(i * phrase.length));
+      tw.textContent = phrase.slice(0, shown);
+      if (shown < phrase.length) { rafId = requestAnimationFrame(step); } else { rafId = null; }
+    };
+    rafId = requestAnimationFrame(step);
+  }
+
+  const canHover = window.matchMedia('(hover: hover)').matches;
+
+  if (canHover) {
+    // Hover flips; click opens notebook in new tab
+    card.addEventListener('mouseenter', () => {
+      card.classList.add('flipped');
+      const once = () => { rotor.removeEventListener('transitionend', once); runType(); };
+      rotor.addEventListener('transitionend', once);
+    });
+    card.addEventListener('mouseleave', () => {
+      card.classList.remove('flipped');
+      cancelType();
+      if (tw) tw.textContent = phrase;
+    });
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.open(notebookHref, '_blank', 'noopener');
+    });
+  } else {
+    // Touch devices: first tap flips (shows text), second tap opens notebook
+    let tappedOnce = false;
+    let tapTimer = null;
+    card.addEventListener('click', () => {
+      if (!tappedOnce) {
+        tappedOnce = true;
+        card.classList.add('flipped');
+        const once = () => { rotor.removeEventListener('transitionend', once); runType(); };
+        rotor.addEventListener('transitionend', once);
+        clearTimeout(tapTimer);
+        tapTimer = setTimeout(() => { tappedOnce = false; }, 900);
+      } else {
+        window.open(notebookHref, '_blank', 'noopener');
+        tappedOnce = false;
+        clearTimeout(tapTimer);
+      }
+    });
+  }
+})();
+</script>
+
+<section class="section">
+  <h2>More Projects</h2>
+  <div class="grid-two">
+    
+  <a class="card" href="./Prediction System for Potential Customers.html" target="_blank" rel="noopener">
+    <div class="thumb"><img src="./assets/prediction-system-for-potential-customers-teaser.png" alt="Preview"></div>
+    <div class="meta">AUG 2025 · Course: Supervised Machine Learning</div>
+    <h3>Prediction system for potential customers</h3>
+    <p>Classifies leads most likely to convert using logistic regression and tree-based models; includes feature engineering and evaluation.</p>
+    <div class="chips"><span class="chip">Logistic Regression</span><span class="chip">Random Forests</span><span class="chip">Model Evaluation</span><span class="chip">Feature Engineering</span></div>
+    <div class="journey">
+      <h4>Model Journey & Outcome</h4>
+      <ol><li>Baseline: Majority‑class & simple EDA rules to quantify uplift.</li><li>Phase 1: Pruned Decision Tree — reduced overfitting and improved interpretability.</li><li>Phase 2: Tuned Random Forest — grid search over `n_estimators`, depth, and split/leaf sizes.</li><li><strong>Final recommendation:</strong> Deploy the <strong>Random Forest</strong> as the primary conversion scorer; score daily, route the top decile to Sales, tune threshold to precision/recall targets, and monitor F1; maintain a nurture track for low‑propensity leads.</li></ol>
+    </div>
+    <span class="btn">View Project Notebook</span>
+  </a>
+
+  <a class="card" href="./Customer Personality Segmentation.html" target="_blank" rel="noopener">
+    <div class="thumb"><img src="./assets/customer-personality-segmentation-teaser.png" alt="Preview"></div>
+    <div class="meta">AUG 2025 · Course: Unsupervised Learning</div>
+    <h3>Customer personality segmentation</h3>
+    <p>Segments customers with clustering to identify actionable personas and tailor marketing strategies.</p>
+    <div class="chips"><span class="chip">K-Means Clustering</span><span class="chip">EDA</span><span class="chip">Dimensionality Reduction</span></div>
+    <div class="journey">
+      <h4>Model Journey & Outcome</h4>
+      <ol><li>Prep: Cleaned & scaled features; winsorized outliers; PCA preview.</li><li>Modeling: Elbow + Silhouette to pick <strong>k=4</strong> interpretable clusters.</li><li>Interpretation: Profiled centroids to define personas & marketing actions.</li><li><strong>Final recommendation:</strong> Adopt a 4‑segment persona map and personalize offers/channels; review segments monthly, refresh quarterly.</li></ol>
+    </div>
+    <span class="btn">View Project Notebook</span>
+  </a>
+
+  </div>
+</section>
+
+    
+<section class="bottom-hero">
+  <div class="spin-wrap"><img class="spin" src="./assets/llm-spinner.svg" alt="Spinning LLM/Data graphic" width="180" height="180"></div>
+  <div class="wordline">Data Analysis <span class='sep'>•</span> Python <span class='sep'>•</span> Machine Learning <span class='sep'>•</span> LLMs <span class='sep'>•</span> Recommenders <span class='sep'>•</span> Visualization</div>
+</section>
+
+    <div class="footer">© 2025 Danielle Matijas • GitHub Pages</div>
+  </div>
+  
+
+
+</body>
+</html>
