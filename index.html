@@ -14,7 +14,7 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0;padding:0;background:var(--bg);color:var(--ink);
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;}
+  font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";}
 a{text-decoration:none;color:inherit}
 .wrap{max-width:1100px;margin:0 auto;padding:28px 18px 100px;position:relative}
 .bg-grid{position:fixed;inset:0;background:url('./assets/bg-grid.svg');opacity:.3;pointer-events:none}
@@ -93,10 +93,10 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
   background:var(--card-bg);color:var(--card-ink);backface-visibility:hidden;display:grid;grid-template-columns:1fr 1.2fr;
   transform:translateZ(0);box-shadow:0 14px 36px rgba(0,0,0,.35)}
 .side .meta-grid{display:grid;grid-template-rows:auto 1fr auto;gap:12px;padding:18px 18px 16px}
-.side .labels{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+.side .labels{font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
   font-size:12px;letter-spacing:.18em;color:#8aa0d9;display:flex;justify-content:space-between;border-bottom:1px dashed var(--card-line);padding-bottom:8px}
 .side .headline{font-size:clamp(28px,4.6vw,44px);line-height:1.08;margin:8px 0 6px;letter-spacing:-0.01em}
-.side .sub{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+.side .sub{font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";
   font-size:12px;letter-spacing:.12em;color:#9bb1ea;display:flex;gap:10px;align-items:center}
 .side .desc{font-size:14px;line-height:1.55;color:#c9d4f2;max-width:52ch}
 .side .thumb-wrap{position:relative;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.02)}
@@ -140,15 +140,15 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
 .face-media{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.03)}
 .face-media img{width:78%;max-height:86%;object-fit:contain;border:1px solid var(--f-line);border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,.25)}
 .face-meta{display:grid;grid-template-rows:auto 1fr auto;gap:12px;padding:18px 18px 16px}
-.face-labels{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
+.face-labels{font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";;
   font-size:12px;letter-spacing:.18em;color:var(--f-muted);display:flex;justify-content:space-between;border-bottom:1px dashed var(--f-line);padding-bottom:8px}
 .face-title{margin:8px 0 6px;font-size:clamp(28px,4.6vw,44px);line-height:1.08;letter-spacing:-.01em;font-weight:800}
-.face-sub{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
+.face-sub{font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";;
   font-size:12px;letter-spacing:.12em;color:var(--f-muted)}
-.face-course{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
+.face-course{font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";;
   font-size:12px;letter-spacing:.08em;color:var(--f-muted);margin-top:2px}
 .face-desc{font-size:14px;line-height:1.55;color:#c9d4f2;max-width:52ch;margin:0}
-.face-hint{font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,'Liberation Mono','Courier New',monospace;
+.face-hint{font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";;
   font-size:11px;color:var(--f-muted);text-align:right}
 .face-back{transform:rotateY(180deg);grid-template-columns:1fr;place-items:center}
 .face-back-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
@@ -197,22 +197,20 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
           <div class="face-meta">
             <div class="face-labels"><span>01 · RECOMMENDATION SYSTEMS</span><span>ABOUT</span></div>
             <h3 class="face-title">Amazon products, ranked.</h3>
-            <div class="face-course">Course: Recommendation Systems</div>
             <h3>Building a recommendation system to recommend the best Amazon products to users</h3>
             <p class="face-desc">This project involves recommending the best Amazon products available to users based on past rating data using recommendation systems techniques.</p>
-            <div class="chips"><span class="chip">Rank-based Recommendation Systems</span><span class="chip">Similarity-based Recommendation Systems</span><span class="chip">Matrix Factorization based Recommendation Systems</span></div>
+            <div class="chips"><span class="chip">Rank Recommendation</span><span class="chip">Similarity Recommendation</span><span class="chip">Matrix Factorization Recommendation Systems</span></div>
             <div class="face-hint">Hover to flip · click to open · tap on mobile</div>
           </div>
         </div>
         <div class="face face-back">
           <div class="face-back-overlay">
-            <a class="typewriter" id="typewriter" href="./Reccomendation System for Amazon Users.html" target="_blank" rel="noopener">VIEW FULL PROJECT NOTEBOOK</a>
-          </div>
+            <a class="btn typewriter" id="typewriter" href="./Reccomendation System for Amazon Users.html" target="_blank" rel="noopener">VIEW FULL PROJECT NOTEBOOK</a>
+         </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="flip-hint">Preview flips on hover; on touch, tap to open/close</div>
+  <div class="face-hint">Hover to flip · click to open · tap on mobile</div>
 </section>
 
 
