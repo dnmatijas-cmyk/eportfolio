@@ -42,7 +42,7 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
 .featured .meta{display:flex;flex-direction:column;gap:6px}
 .featured .title{font-size:22px;font-weight:700}
 .featured .desc{color:var(--muted)}
-.featured .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}
+.featured .chips{display:flex;flex-wrap:nowrap;gap:8px;margin-top:4px}
 .chip{background:var(--chip);color:var(--chipfg);border-radius:999px;padding:6px 10px;font-size:12px}
 .btn{display:inline-block;margin-top:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));
   color:#0b1020;border:none;border-radius: 8px;padding:10px 14px;font-weight:800}
@@ -152,7 +152,8 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
   font-size:11px;color:var(--f-muted);text-align:right}
 .face-back{transform:rotateY(180deg);grid-template-columns:1fr;place-items:center}
 .face-back-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.typewriter{font-weight:900;font-size:18px;letter-spacing:.12em;color:#e8ecf7;padding:12px 18px;border:1px dashed var(--f-line);border-radius:8px;background:rgba(255,255,255,.04);white-space:nowrap}
+.typewriter{font-weight:900;font-size:18px;letter-spacing:.12em;}
+            /*renove styling so defualts to btn color:#e8ecf7;padding:12px 18px;border:1px dashed var(--f-line);border-radius:8px;background:rgba(255,255,255,.04);white-space:nowrap}*/
 @media (max-width:900px){.face{grid-template-columns:1fr}.rotor{height:420px}}
 
 /* Keep bottom tagline small/single-line */
@@ -172,7 +173,7 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
   </a>
   <div class="dates">May 2025 – August 2025</div>
   <div class="links">
-    <a href="./Matijas, Danielle Resume 2025.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+    <a href="./assets/Matijas-Danielle-Resume-2025.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
 <a href="./assets/certificate-mit-idss.png" target="_blank" rel="noopener">Download Certificate</a>
     <a href="https://www.linkedin.com/in/danielle-matijas-0b977799" target="_blank" rel="noopener">LinkedIn</a>
   </div>
@@ -192,24 +193,24 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
     <div class="card3d" id="card3d" aria-label="Featured project card">
       <div class="rotor" id="rotor">
         <div class="face face-front">
-          <div class="face-media"><img src="./assets/amazon-featured.png" alt="Amazon recommender preview"></div>
+          <div class="face-media"><img src="./assets/amazon2.png" alt="Amazon recommender preview"></div>
           <div class="face-meta">
             <div class="face-labels"><span>01 · RECOMMENDATION SYSTEMS</span><span>ABOUT</span></div>
             <h3 class="face-title">Amazon products, ranked.</h3>
             <h3>Building a recommendation system to recommend the best Amazon products to users</h3>
             <p class="face-desc">This project involves recommending the best Amazon products available to users based on past rating data using recommendation systems techniques.</p>
-            <div class="chips"><span class="chip">Rank Recommendation</span><span class="chip">Similarity Recommendation</span><span class="chip">Matrix Factorization Recommendation Systems</span></div>
+            <div class="chips"><span class="chip">Rank & Similarity Recommendation</span><span class="chip">Matrix Factorization Recommendation Systems</span></div>
             <div class="face-hint">Hover to flip · click to open · tap on mobile</div>
           </div>
         </div>
         <div class="face face-back">
           <div class="face-back-overlay">
             <a class="btn typewriter" id="typewriter" href="./Reccomendation System for Amazon Users.html" target="_blank" rel="noopener">VIEW FULL PROJECT NOTEBOOK</a>
-            <div class="face-hint">Hover to flip · click to open · tap on mobile</div>
+          </div>
          </div>
         </div>
       </div>
-    </div>
+    <div class="face-hint">Hover to flip · click to open · tap on mobile</div>
   </div>
 </section>
 
@@ -229,7 +230,7 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
   const rotor = document.getElementById('rotor');
   const tw = document.getElementById('typewriter');
   const phrase = 'VIEW FULL PROJECT NOTEBOOK';
-  const notebookHref = './Reccomendation System for Amazon Users.html';
+  const notebookHref = './assets/recommendation-system-for-amazon-users.html';
   let rafId = null;
 
   // Spin once when visible and on load (keep from source)
@@ -304,7 +305,7 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
   <h2>More Projects</h2>
   <div class="grid-two">
     
-  <a class="card" href="./Prediction System for Potential Customers.html" target="_blank" rel="noopener">
+  <a class="card" href="./assets/prediction-system-for-potential-customers.html" target="_blank" rel="noopener">
     <div class="thumb"><img src="./assets/prediction-system-for-potential-customers-teaser.png" alt="Preview"></div>
     <div class="meta">02 · Course: Supervised Machine Learning</div>
     <h3>Prediction system for potential customers</h3>
@@ -317,7 +318,7 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
     <span class="btn">View Project Notebook</span>
   </a>
 
-  <a class="card" href="./Customer Personality Segmentation.html" target="_blank" rel="noopener">
+  <a class="card" href="./assets/customer-personality-segmentation.html" target="_blank" rel="noopener">
     <div class="thumb"><img src="./assets/customer-personality-segmentation-teaser.png" alt="Preview"></div>
     <div class="meta">03 · Course: Unsupervised Learning</div>
     <h3>Customer personality segmentation</h3>
