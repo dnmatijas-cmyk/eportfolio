@@ -150,6 +150,38 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
 .face-back-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
 .typewriter{font-weight:900;font-size:18px;letter-spacing:.12em;}
 @media (max-width:900px){.face{grid-template-columns: 1fr 1fr;line-height:1;text-align:center;letter-spacing:.01em;color:#c9d4f2;opacity:.9;font-weight:700;white-space:nowrap;overflow:hidden;}
+/* === Featured (3D) card: match "journey" dashbox style + give text more room === */
+.card-hero .face { grid-template-columns: .85fr 1.55fr; }      /* smaller media, more text */
+.card-hero .face-media img { width: 58%; max-height: 70%; }    /* shrink preview image */
+.card-hero .rotor { height: 540px; }                            /* prevent clipping */
+
+.card-hero .face .journey{
+  background: rgba(255,255,255,.02);
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+  padding: 10px;
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+.card-hero .face .journey h4{
+  margin: 0 0 6px;
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.card-hero .face .journey ol{
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 900px){
+  .card-hero .face { grid-template-columns: 1fr; }
+  .card-hero .rotor { height: 560px; } /* extra headroom on small screens */
+}
+                         
 </style>
 
 
