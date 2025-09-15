@@ -160,6 +160,63 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
 .typewriter{font-weight:900;font-size:18px;letter-spacing:.12em;}
             /*renove styling so defualts to btn color:#e8ecf7;padding:12px 18px;border:1px dashed var(--f-line);border-radius:8px;background:rgba(255,255,255,.04);white-space:nowrap}*/
 @media (max-width:900px){.face{grid-template-columns: .8fr 1.5fr;line-height:1;text-align:center;letter-spacing:.01em;color:#c9d4f2;opacity:.9;font-weight:700;white-space:nowrap;overflow:hidden;}
+@media (max-width: 900px) {
+  /* Featured card: stack vertically */
+  .card3d-wrap,
+  .card3d,
+  .rotor,
+  .face {
+    width: 100%;
+    min-width: 0;
+    max-width: 100vw;
+  }
+  .rotor {
+    height: auto;
+    min-height: 0;
+  }
+  .face {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    height: auto;
+    min-height: 0;
+    box-shadow: 0 8px 24px rgba(0,0,0,.25);
+    padding: 0;
+  }
+  .face-media {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 18px 0 0 0;
+  }
+  .face-media img {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+    border: 3px solid #fff;
+  }
+  .face-meta {
+    padding: 14px 10px 10px 10px;
+  }
+
+  /* Grid: stack all cards vertically, fill screen */
+  .grid-two {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .card {
+    max-width: 100%;
+    margin: 0 0 18px 0;
+    min-width: 0;
+  }
+  .section {
+    padding-top: 8px;
+  }
+}                         
 </style>
 
 
