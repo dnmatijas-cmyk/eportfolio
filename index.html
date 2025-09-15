@@ -63,13 +63,14 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
 /* Bottom spinning section */
 .bottom-hero{position:relative;margin-top:60px;padding:80px 0;border-top:1px solid var(--line)}
 .bottom-hero .spin-wrap{position:absolute;left:50%;transform:translateX(-50%);top:-60px}
-.spin{animation:spin 16s linear infinite;filter:drop-shadow(0 10px 20px rgba(0,0,0,.4))}
-@keyframes spin{to{transform:rotate(360deg)}}
+
+}
 .wordline{font-size:clamp(10px,1.8vw,20px);line-height:1;text-align:center;letter-spacing:.01em;color:#c9d4f2;opacity:.9;font-weight:700;white-space:nowrap;overflow:hidden;}
 .wordline .sep{color:#7c8bb9;margin:0 .4em}
 .footer{margin-top:40px;padding-top:14px;border-top:1px solid var(--line);color:var(--muted);font-size:12px;text-align:center}
 @media (max-width: 900px){
-  .hero .right{position:static;width:100%;margin-top:14px}
+  .hero .right{position:static;width:100%;margin-top:14px  .card-featured .btn{align-self:center;text-align:center}
+}
   .featured{grid-template-columns:1fr}
   .grid-two{grid-template-columns:1fr}
   .bottom-hero .spin-wrap{top:-40px}
@@ -135,10 +136,10 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
 .card3d.flipped .rotor{transform:rotateY(180deg)}
 .face{position:absolute;inset:0;border:1px solid var(--f-line);border-radius:12px;overflow:hidden;
   background:linear-gradient(180deg,var(--f-bg1),var(--f-bg2));color:var(--f-ink);
-  backface-visibility:hidden;-webkit-backface-visibility:hidden;display:grid;grid-template-columns:1fr 1.2fr;
+  backface-visibility:hidden;-webkit-backface-visibility:hidden;display:grid;grid-template-columns:9fr 1.4fr;
   box-shadow:0 14px 36px rgba(0,0,0,.35);transform:translateZ(0)}
 .face-media{display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.03)}
-.face-media img{width:78%;max-height:86%;object-fit:contain;border:1px solid #fff;border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,.25)}
+.face-media img{width:66%;max-height:80%;object-fit:contain;border:1px solid var(--f-line);border-radius:10px;box-shadow:0 16px 40px rgba(0,0,0,.25)}
 .face-meta{display:grid;grid-template-rows:auto 1fr auto;gap:12px;padding:18px 18px 16px}
 .face-labels{font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";;
   font-size:12px;letter-spacing:.18em;color:var(--f-muted);display:flex;justify-content:space-between;border-bottom:1px dashed var(--f-line);padding-bottom:8px}
@@ -150,11 +151,16 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
 .face-desc{font-size:14px;line-height:1.55;color:#c9d4f2;max-width:52ch;margin:0}
 .face-hint{font-family: ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji";;
   font-size:11px;color:var(--f-muted);text-align:right}
+  /* Dashed journey box to match other cards */
+.face .journey{background:rgba(255,255,255,.02);border:1px dashed var(--line);border-radius:12px;padding:10px;margin-top:10px;margin-bottom:10px}
+.face .journey h4{margin:0 0 6px;font-size:12px;color:var(--muted);letter-spacing:.08em;text-transform:uppercase}
+.face .journey ol{margin:0;padding-left:18px;color:var(--muted);font-size:14px}
+/* Back */
 .face-back{transform:rotateY(180deg);grid-template-columns:1fr;place-items:center}
 .face-back-overlay{position:absolute;inset:0;display:flex;align-items:center;justify-content:center}
-.typewriter{font-weight:900;font-size:18px;letter-spacing:.12em;}
+.typewriter{font-weight:900;font-size:18px;letter-spacing:.12em;text-align:center}
             /*renove styling so defualts to btn color:#e8ecf7;padding:12px 18px;border:1px dashed var(--f-line);border-radius:8px;background:rgba(255,255,255,.04);white-space:nowrap}*/
-@media (max-width:900px){.face{grid-template-columns:1fr}.rotor{height:420px}}
+@media (max-width:900px){.face{grid-template-columns:1fr}.rotor{height:380px}}
 
 /* Keep bottom tagline small/single-line */
 .wordline{font-size:clamp(10px,1.8vw,20px);line-height:1;text-align:center;letter-spacing:.01em;color:#c9d4f2;opacity:.9;font-weight:700;white-space:nowrap;overflow:hidden;}
@@ -200,8 +206,13 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
             <h3>Building a recommendation system to recommend the best Amazon products to users</h3>
             <div class="chips"><span class="chip">Rank & Similarity Recommendation Systems</span><span class="chip">Matrix Factorization Recommendation Systems</span></div>
             <div class="journey">
-              <h4>Model Journey & Outcome</h4>
-              <ol><li>Baseline: Popularity + simple user–user cosine similarity to set a top-N benchmark.</li><li>Phase 1: Tuned k-NN (user & item) with normalization and minimum overlap — modest precision uplift.</li><li>Phase 2: Matrix factorization (SVD) with tuned factors/regularization — best overall Precision@10/Recall@10 and lowest RMSE.</li><li><strong>Final recommendation:</strong> Ship tuned SVD for ranking; refresh factors weekly and recs daily; use popularity/new-arrival fallback for cold-start; monitor Precision@10/Recall@10 and RMSE.</li></ol>
+              <h4>Model Journey &amp; Outcome</h4>
+              <ol>
+                <li><strong>Baseline:</strong> Popularity + simple user–user cosine similarity to set a top‑N benchmark.</li>
+                <li><strong>Phase 1:</strong> Tuned KNN (user &amp; item) with normalization and minimum overlap — modest precision uplift.</li>
+                <li><strong>Phase 2:</strong> Matrix factorization (SVD) with tuned factors/regularization — best Precision@10/Recall@10 and lowest RMSE.</li>
+                <li><strong>Final recommendation:</strong> Ship <strong>tuned SVD</strong>; refresh factors weekly and recs daily; use popularity/new‑arrival fallback for cold‑start; monitor Precision@10/Recall@10 and RMSE.</li>
+              </ol>
             </div>
             <div class="face-hint">Hover to flip · click to open · tap on mobile</div>
           </div>
