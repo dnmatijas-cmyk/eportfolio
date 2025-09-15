@@ -47,7 +47,7 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
 .btn{display:inline-block;margin-top:10px;background:linear-gradient(90deg,var(--accent),var(--accent2));
   color:#0b1020;border:none;border-radius: 8px;padding:10px 14px;font-weight:800}
 /* Two-up grid for remaining projects */
-.grid-two{display:grid;grid-template-columns: .8fr 1.5fr;gap:16px;margin-top:14px}
+.grid-two{display:grid;grid-template-columns: 1fr 1fr;gap:16px;margin-top:14px}
 .card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px;transition:transform .2s ease, box-shadow .2s ease;display:flex;flex-direction:column;height:100%}
 .card:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.25)}
 .card .thumb{height:200px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:rgba(255,255,255,.02);margin-bottom:10px}
@@ -193,7 +193,7 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
             <div class="face-labels"><span>01 · RECOMMENDATION SYSTEMS</span><span>ABOUT</span></div>
             <h3 class="face-title">Amazon products, ranked.</h3>
             <p class="face-desc">Building a recommendation system to recommend the best Amazon products to users</p>
-            <div class="chips"><span class="chip">Rank &amp; Similarity Recommendation Systems</span><span class="chip">Matrix Factorization Recommendation Systems</span></div>
+            <div class="chips"><span class="chip">Rank &amp; Similarity & Rank Recommendation Systems</span><span class="chip">Matrix Factorization Recommendation Systems</span></div>
             <div class="journey">
               <h4>Model Journey & Outcome</h4>
               <ol><li>Baseline: Popularity + simple user–user cosine similarity to set a top-N benchmark.</li><li>Phase 1: Tuned k-NN (user & item) with normalization and minimum overlap — modest precision uplift.</li><li>Phase 2: Matrix factorization (SVD) with tuned factors/regularization — best overall Precision@10/Recall@10 and lowest RMSE.</li><li><strong>Final recommendation:</strong> Ship tuned SVD for ranking; refresh factors weekly and recs daily; use popularity/new-arrival fallback for cold-start; monitor Precision@10/Recall@10 and RMSE.</li></ol>
