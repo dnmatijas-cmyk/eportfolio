@@ -198,8 +198,11 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
             <div class="face-labels"><span>01 · RECOMMENDATION SYSTEMS</span><span>ABOUT</span></div>
             <h3 class="face-title">Amazon products, ranked.</h3>
             <h3>Building a recommendation system to recommend the best Amazon products to users</h3>
-            <p class="face-desc">This project involves recommending the best Amazon products available to users based on past rating data using recommendation systems techniques.</p>
-            <div class="chips"><span class="chip">Rank & Similarity Recommendation</span><span class="chip">Matrix Factorization Recommendation Systems</span></div>
+            <div class="chips"><span class="chip">Rank & Similarity Recommendation Systems</span><span class="chip">Matrix Factorization Recommendation Systems</span></div>
+            <div class="journey">
+            <h4>Model Journey & Outcome</h4>
+            <ol><li>Baseline: Popularity + simple user–user cosine similarity to set a top-N benchmark.</li><li>Phase 1: Tuned k-NN (user & item) with normalization and minimum overlap — modest precision uplift.</li><li>Phase 2: Matrix factorization (SVD) with tuned factors/regularization — best overall Precision@10/Recall@10 and lowest RMSE.</li><li><strong>Final recommendation:</strong> Ship tuned SVD for ranking; refresh factors weekly and recs daily; use popularity/new-arrival fallback for cold-start; monitor Precision@10/Recall@10 and RMSE.</li></ol>
+            </div>
             <div class="face-hint">Hover to flip · click to open · tap on mobile</div>
           </div>
         </div>
@@ -320,7 +323,7 @@ header.hero{padding:60px 0 24px;border-bottom:1px solid var(--line);position:rel
 
   <a class="card" href="./assets/customer-personality-segmentation.html" target="_blank" rel="noopener">
     <div class="thumb"><img src="./assets/customer-personality-segmentation-teaser.png" alt="Preview"></div>
-    <div class="meta">03 · Course: Unsupervised Learning</div>
+    <div class="meta">03 · Making Sense of Unstructured Data</div>
     <h3>Customer personality segmentation</h3>
     <p>Segments customers with clustering to identify actionable personas and tailor marketing strategies.</p>
     <div class="chips"><span class="chip">K-Means Clustering</span><span class="chip">EDA</span><span class="chip">Dimensionality Reduction</span></div>
